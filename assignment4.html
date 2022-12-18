@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>storage app</title>
+    </head>
+    <body>  
+        <p>simple storage</p>
+        <button id="local">Increment number local store</button>
+        <button id="session">Increment number session store</button>
+        <button id="clear">Clear session</button>
+
+        <script>
+          var count = 0
+          var count2 = 0 
+          let localcount = document.getElementById('local')
+          let sessioncount = document.getElementById('session')
+          let clearbutton = document.getElementById('clear')
+          
+          function incrementLocal(){
+            count ++
+            localStorage.setItem('count',count)
+          }
+          function incrementSession(){
+            count2 ++
+            sessionStorage.setItem('count',count2)
+          }
+          function clearsession(){
+            localStorage.clear()
+            sessionStorage.clear()
+          }
+
+          localcount.addEventListener('click',incrementLocal)
+          sessioncount.addEventListener('click',incrementSession)
+          clearbutton.addEventListener('click',clearsession)
+
+          
+    
+        </script>
+    </body>
+</html>
